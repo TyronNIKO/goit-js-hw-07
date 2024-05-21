@@ -34,7 +34,13 @@ class Boxes {
     init() {
         this.controls.create.addEventListener("click", () => {
             let value = parseInt(this.controls.input.value, 10);
-            value && 0 < value && value <= 100 ? this.createBoxes(value)(this.parent.classList.remove("error")) : this.parent.classList.add("error")(this.parent.insertAdjacentHTML("beforeend", this.errorEl));
+            if (value && 0 < value && value <= 100) {
+                this.createBoxes(value);
+                this.parent.classList.remove("error");
+            } else {
+                this.parent.classList.add("error");
+                this.parent.insertAdjacentHTML("beforeend", this.errorEl);
+            }
         });
         this.controls.destroy.addEventListener("click", () => this.destroyBoxes());
     }
