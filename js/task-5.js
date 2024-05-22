@@ -5,9 +5,10 @@ function getRandomHexColor() {
         .padStart(6, 0)}`;
 }
 function changeBgColor() {
-    document.body.style.backgroundColor = getRandomHexColor();
+    const randColor = getRandomHexColor();
+    document.body.style.backgroundColor = randColor;
     const span = document.querySelector(".color");
-    span.innerText = getRandomHexColor();
+    span.innerText = randColor;
 }
 const button = document.querySelector(".change-color");
 button.addEventListener("click", changeBgColor);
