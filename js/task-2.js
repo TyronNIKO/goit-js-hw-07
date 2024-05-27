@@ -27,8 +27,6 @@ const images = [
 ];
 
 class Gallery {
-    items;
-    parent;
     constructor(array, selector) {
         this.items = array;
         this.parent = document.querySelector(selector);
